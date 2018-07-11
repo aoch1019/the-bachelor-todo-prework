@@ -1,5 +1,14 @@
+require 'pry'
+
 def get_first_name_of_season_winner(data, season)
-  # code here
+  data[season].each do |array|
+    array.each do |contestant_hash|
+      binding.pry
+      if contestant_hash[:status] == "Winner"
+        contestant_hash[:name].split(" ")[0]
+      end
+    end
+  end
 end
 
 def get_contestant_name(data, occupation)
